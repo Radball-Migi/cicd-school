@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Set working directory
-WORKDIR /hello-world
+WORKDIR /app
 
 # Copy requirements.txt
 COPY requirements.txt .
@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application
-COPY app.py .
+COPY app.py ./hello-world/
 
 # Expose port 8080
 EXPOSE 8080
